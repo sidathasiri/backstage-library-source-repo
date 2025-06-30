@@ -1,0 +1,65 @@
+site_name: "Canopy UI"
+extra:
+   techdocs-cli serve    generator:
+       name: techdocs
+       base_image: backstage/techdocs-container:latest
+theme:
+  name: material # Enable the Material theme
+  features: # Enable specific theme features
+    - navigation.tabs
+    - navigation.sections
+    - content.code.annotate # For code annotations
+    # - content.tabs.link # Link content tabs together
+    # Add other features as desired
+markdown_extensions:
+  # Core Markdown and TOC
+  - toc:
+      permalink: true
+  # Python Markdown Extensions (often needed by Material)
+  - tables
+  - footnotes
+  - admonition
+  - attr_list # Crucial for buttons, custom styling attributes
+  # PyMdown Extensions (Material leverages these heavily)
+  - pymdownx.details # Often used with admonition
+  - pymdownx.inlinehilite # Allow inline code highlighting
+  - pymdownx.highlight: # Configure code highlighting
+      anchor_linenums: true
+  - pymdownx.tabbed: # For Content Tabs
+      alternate_style: true
+  - pymdownx.emoji: # For Icons/Emojis
+      emoji_index: !!python/name:material.extensions.emoji.twemoji # Standard emojis
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg # Render as SVG
+  - pymdownx.keys # For keyboard keys
+  - pymdownx.mark # For ==highlighting==
+  - pymdownx.tilde # For ~~strikethrough~~
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+# markdown_extensions:
+#   - admonition
+#   - pymdownx.details # Often used with admonition
+#   - pymdownx.superfences
+#   - tables
+#   - toc:
+#       permalink: true # Example option
+# markdown_extensions:
+#   - pymdownx.superfences:
+#       custom_fences:
+#         - name: mermaid
+#           class: mermaid
+#           format: !!python/name:pymdownx.superfences.fence_code_format
+#   - pymdownx.inlinehilite
+#   - pymdownx.tabbed # If you use tabs
+nav:
+  - ReadMe: README.md
+  - Components: components.md
+  - Tech Stack: techStack.md
+  - Design-Development Workflow: designDevelopmentWorkflow.md
+  - Release Guide: releaseGuide.md
+  - Testing Strategy: testingStrategy.md  
+plugins:
+   - techdocs-core
+   - mermaid2
