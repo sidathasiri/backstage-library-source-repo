@@ -54,12 +54,6 @@ markdown_extensions:
 #   - pymdownx.inlinehilite
 #   - pymdownx.tabbed # If you use tabs
 nav:
-  - ReadMe: README.md
-  - Components: components.md
-  - Tech Stack: techStack.md
-  - Design-Development Workflow: designDevelopmentWorkflow.md
-  - Release Guide: releaseGuide.md
-  - Testing Strategy: testingStrategy.md  
+  - Overview: index.md
 plugins:
    - techdocs-core
-   - mermaid2
